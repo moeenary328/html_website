@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Homepage</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url("18.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: rgb(0, 0, 0); /* Transparent black overlay */
+      padding: 15px 0;
+      backdrop-filter: blur(5px);   /* Glass effect */
+      z-index: 1000;
+    }
+    nav a {
+      font-weight: bold;
+      margin: 0 20px;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    /* Center Content */
+    .main {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .main h1 {
+      color: black;
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgb(207, 207, 207);
+    }
+
+    .main button {
+      padding: 15px 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    .main button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="/index2.html">My Work</a>
+  </nav>
+
+  <!-- Main Section -->
+  <div class="main">
+    <h1>Welcome</h1>
+    <button>Let's Go</button>
+  </div>
+
+</body>
+</html>
