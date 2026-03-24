@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Moeen | Frontend Developer Portfolio</title>
+  <title>Moeen | Next.js Expert & Frontend Developer</title>
   
-  <!-- ========== FAVICON - Browser Tab Logo ========== -->
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Moeen - Next.js Expert with 3+ years experience. Frontend Developer specializing in React.js, Next.js, Tailwind CSS. Available for freelance projects.">
+  <meta name="keywords" content="Next.js Expert, React.js Developer, Frontend Developer, Tailwind CSS, Portfolio">
+  <meta name="author" content="Moeen">
+  
+  <!-- ========== FAVICON ========== -->
   <link rel="icon" type="image/jpeg" href="logo.jpeg">
   <link rel="shortcut icon" href="logo.jpeg" type="image/jpeg">
   <link rel="apple-touch-icon" href="logo.jpeg">
@@ -64,9 +69,6 @@
       background: var(--primary);
       border-radius: 10px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--secondary);
-    }
 
     /* ========== ANIMATIONS ========== */
     @keyframes float {
@@ -74,24 +76,17 @@
       50% { transform: translateY(-20px); }
     }
     @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
     }
     @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(106,17,203,0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(106,17,203,0); }
+      100% { box-shadow: 0 0 0 0 rgba(106,17,203,0); }
     }
 
     /* ========== HERO SECTION ========== */
@@ -152,9 +147,35 @@
       font-size: 1.1rem;
       color: var(--text-light);
       margin-bottom: 30px;
-      max-width: 500px;
+      max-width: 550px;
       line-height: 1.6;
     }
+    
+    /* Expertise Badges */
+    .expertise-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+    .exp-badge {
+      background: rgba(106,17,203,0.08);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #6a11cb;
+      border: 1px solid rgba(106,17,203,0.2);
+    }
+    .exp-badge.next {
+      background: rgba(0,0,0,0.05);
+      color: #000;
+      border-color: rgba(0,0,0,0.1);
+    }
+    .exp-badge i {
+      margin-right: 6px;
+    }
+    
     .hero-stats {
       display: flex;
       gap: 40px;
@@ -170,6 +191,7 @@
     .stat p {
       font-size: 0.9rem;
       margin: 0;
+      color: var(--text-light);
     }
     .hero-visual {
       flex: 1;
@@ -220,8 +242,6 @@
       color: white;
       border-color: transparent;
     }
-    
-    /* Old Site Button Style */
     .btn-old {
       display: inline-block;
       background: transparent;
@@ -239,6 +259,27 @@
       color: white;
       border-color: transparent;
       transform: translateY(-3px);
+    }
+    
+    /* WhatsApp Button */
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 14px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 15px;
+      animation: pulse 2s infinite;
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+    }
+    .btn-whatsapp i {
+      margin-right: 8px;
     }
 
     /* ========== SKILLS SECTION ========== */
@@ -298,6 +339,12 @@
       border-radius: 10px;
       width: 0;
       transition: width 1s ease;
+    }
+    
+    /* Next.js Highlight */
+    .skill-card.next-highlight {
+      background: linear-gradient(135deg, #fff, #f0f0f0);
+      border: 2px solid #6a11cb;
     }
 
     /* ========== SERVICES SECTION ========== */
@@ -399,14 +446,8 @@
       animation: scaleIn 0.5s ease;
     }
     @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
     .portfolio-img {
       width: 100%;
@@ -540,7 +581,7 @@
       color: white;
     }
 
-    /* ========== TOAST NOTIFICATION ========== */
+    /* ========== TOAST ========== */
     .toast {
       position: fixed;
       bottom: 30px;
@@ -554,14 +595,8 @@
       animation: slideInLeft 0.3s ease;
     }
     @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     /* ========== BACK TO TOP ========== */
@@ -587,9 +622,6 @@
       opacity: 1;
       visibility: visible;
     }
-    .back-to-top:hover {
-      transform: translateY(-5px);
-    }
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 968px) {
@@ -598,44 +630,28 @@
         text-align: center;
         padding-top: 150px;
       }
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      .typing-text {
-        font-size: 1.3rem;
-      }
-      .hero-stats {
-        justify-content: center;
-      }
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-      .section-header h2 {
-        font-size: 2rem;
-      }
-      .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      }
-      .btn-primary, .btn-outline, .btn-old {
+      .hero-content h1 { font-size: 2.5rem; }
+      .typing-text { font-size: 1.3rem; }
+      .hero-stats { justify-content: center; }
+      .expertise-badges { justify-content: center; }
+      .contact-container { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 2rem; }
+      .skills-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+      .btn-primary, .btn-outline, .btn-old, .btn-whatsapp {
         padding: 10px 20px;
         font-size: 0.9rem;
         margin: 5px;
       }
     }
-
     @media (max-width: 500px) {
-      .hero-content h1 {
-        font-size: 1.8rem;
-      }
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-content h1 { font-size: 1.8rem; }
+      .portfolio-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar will be loaded dynamically by navbar-loader.js -->
+  <!-- Navbar will be loaded dynamically -->
   <div id="navbar-container"></div>
 
   <!-- Back to Top Button -->
@@ -649,7 +665,7 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <span class="badge" data-aos="fade-up">✨ Welcome to my portfolio</span>
+      <span class="badge" data-aos="fade-up">✨ Next.js Expert Available</span>
       <h1 data-aos="fade-up" data-aos-delay="100">
         Hi, I'm <span class="gradient-text">Moeen</span>
       </h1>
@@ -657,15 +673,30 @@
         I'm a <span class="typed" id="typed"></span>
       </div>
       <p data-aos="fade-up" data-aos-delay="300">
-        Frontend Developer crafting visually stunning, modern web applications with creativity, precision, and passion for clean code. Specialized in React.js, Next.js, and modern CSS frameworks.
+        🚀 <strong>Next.js Specialist</strong> with <strong>3+ years of experience</strong> building high-performance web applications. I create scalable, SEO-friendly, and lightning-fast solutions using modern technologies.
       </p>
+      
+      <!-- Expertise Badges - NEW -->
+      <div class="expertise-badges" data-aos="fade-up" data-aos-delay="350">
+        <span class="exp-badge next"><i class="fab fa-node-js"></i> Next.js Expert</span>
+        <span class="exp-badge"><i class="fab fa-react"></i> React.js Pro</span>
+        <span class="exp-badge"><i class="fab fa-tailwind"></i> Tailwind CSS</span>
+        <span class="exp-badge"><i class="fas fa-server"></i> Full-Stack Capable</span>
+        <span class="exp-badge"><i class="fas fa-chart-line"></i> SEO Optimized</span>
+      </div>
+      
       <div data-aos="fade-up" data-aos-delay="400">
         <button class="btn-primary" onclick="scrollToWork()">View My Work</button>
         <button class="btn-outline" onclick="scrollToContact()">Contact Me</button>
         <a href="https://www.calculatingwithme.com/" target="_blank" class="btn-old">
-          <i class="fas fa-external-link-alt"></i> Visit Main Site
+          <i class="fas fa-external-link-alt"></i> Main Site
+        </a>
+        <a href="https://wa.me/923186314829?text=Hi%20Moeen!%20I%20saw%20your%20portfolio%20and%20I'm%20interested%20in%20working%20with%20you." 
+           target="_blank" class="btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </div>
+      
       <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
         <div class="stat">
           <h3 id="projectCount">50+</h3>
@@ -676,8 +707,12 @@
           <p>Happy Clients</p>
         </div>
         <div class="stat">
-          <h3>5+</h3>
+          <h3>3+</h3>
           <p>Years Exp</p>
+        </div>
+        <div class="stat">
+          <h3>100%</h3>
+          <p>Client Satisfaction</p>
         </div>
       </div>
     </div>
@@ -712,12 +747,12 @@
       <div class="skill-card" data-aos="flip-left" data-aos-delay="250">
         <i class="fab fa-react" style="color: #61dafb;"></i>
         <h3>React.js</h3>
-        <div class="skill-level"><div class="skill-progress" style="width: 85%;"></div></div>
+        <div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div>
       </div>
-      <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
-        <i class="fab fa-node-js" style="color: #68a063;"></i>
-        <h3>Next.js</h3>
-        <div class="skill-level"><div class="skill-progress" style="width: 80%;"></div></div>
+      <div class="skill-card next-highlight" data-aos="flip-left" data-aos-delay="300">
+        <i class="fab fa-node-js" style="color: #000;"></i>
+        <h3>Next.js <span style="font-size: 0.7rem;">(Expert)</span></h3>
+        <div class="skill-level"><div class="skill-progress" style="width: 92%;"></div></div>
       </div>
       <div class="skill-card" data-aos="flip-left" data-aos-delay="350">
         <i class="fab fa-bootstrap" style="color: #7952b3;"></i>
@@ -727,7 +762,12 @@
       <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
         <i class="fab fa-tailwind" style="color: #38bdf8;"></i>
         <h3>Tailwind CSS</h3>
-        <div class="skill-level"><div class="skill-progress" style="width: 88%;"></div></div>
+        <div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill-card" data-aos="flip-left" data-aos-delay="450">
+        <i class="fas fa-database" style="color: #47A248;"></i>
+        <h3>MongoDB / Prisma</h3>
+        <div class="skill-level"><div class="skill-progress" style="width: 80%;"></div></div>
       </div>
     </div>
   </section>
@@ -741,19 +781,19 @@
     </div>
     <div class="services-grid">
       <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-        <h3>Web Development</h3>
-        <p>Modern, responsive websites with blazing fast performance using React, Next.js, and modern CSS frameworks.</p>
+        <div class="service-icon"><i class="fab fa-node-js"></i></div>
+        <h3>Next.js Development</h3>
+        <p>Server-side rendering, static site generation, API routes, and full-stack Next.js applications with optimal performance and SEO.</p>
       </div>
       <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
         <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
         <h3>Responsive Design</h3>
-        <p>Fully responsive websites that work perfectly on all devices from mobile to desktop.</p>
+        <p>Fully responsive websites that work perfectly on all devices from mobile to desktop using Tailwind CSS and modern techniques.</p>
       </div>
       <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-        <div class="service-icon"><i class="fas fa-code"></i></div>
-        <h3>Frontend Architecture</h3>
-        <p>Clean, scalable code structure with modern JavaScript frameworks and best practices.</p>
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>SEO Optimization</h3>
+        <p>Next.js meta tags, sitemap generation, and performance optimization to rank higher in search results.</p>
       </div>
     </div>
   </section>
@@ -789,7 +829,7 @@
             <h3>Sarah Johnson</h3>
             <p>CEO, TechStart</p>
             <div class="stars">★★★★★</div>
-            <p>"Moeen transformed our vision into reality. The React.js application he built is absolutely stunning and performs incredibly well!"</p>
+            <p>"Moeen's Next.js expertise is outstanding! He built a lightning-fast e-commerce platform with perfect SEO. Highly recommended!"</p>
           </div>
         </div>
         <div class="swiper-slide">
@@ -798,7 +838,7 @@
             <h3>Michael Chen</h3>
             <p>Product Manager</p>
             <div class="stars">★★★★★</div>
-            <p>"Best frontend developer I've ever worked with. Delivered ahead of schedule with exceptional Next.js implementation."</p>
+            <p>"Best Next.js developer I've worked with! Delivered ahead of schedule with exceptional code quality and performance."</p>
           </div>
         </div>
         <div class="swiper-slide">
@@ -807,7 +847,7 @@
             <h3>Emily Rodriguez</h3>
             <p>Creative Director</p>
             <div class="stars">★★★★★</div>
-            <p>"The attention to detail is incredible. Moeen's Tailwind CSS work speaks for itself - pure excellence!"</p>
+            <p>"Moeen's Tailwind CSS + Next.js combination created a stunning, responsive website. Pure excellence!"</p>
           </div>
         </div>
       </div>
@@ -820,12 +860,12 @@
     <div class="section-header" data-aos="fade-up">
       <span class="badge">Get In Touch</span>
       <h2>Let's Create <span class="gradient-text">Something Amazing</span></h2>
-      <p>Ready to start your next project? I'd love to hear from you!</p>
+      <p>Ready to start your next Next.js project? I'd love to hear from you!</p>
     </div>
     <div class="contact-container">
       <div class="contact-info" data-aos="fade-right">
         <h3>Let's Talk</h3>
-        <p style="margin: 20px 0;">Have a project in mind? Let's discuss how we can bring your vision to life with React, Next.js, or any modern framework.</p>
+        <p style="margin: 20px 0;">Need a Next.js expert for your project? Let's discuss how I can help you build scalable, high-performance web applications.</p>
         <p><i class="fas fa-envelope"></i> moeenthaheem1@gmail.com</p>
         <p><i class="fas fa-phone"></i> +92 3186314829</p>
         <p><i class="fas fa-map-marker"></i> Pakistan</p>
@@ -840,8 +880,8 @@
         <form id="contactForm">
           <input type="text" placeholder="Your Name" id="name" required>
           <input type="email" placeholder="Your Email" id="email" required>
-          <input type="text" placeholder="Subject">
-          <textarea rows="5" placeholder="Your Message" id="message" required></textarea>
+          <input type="text" placeholder="Project Type (Next.js/React/etc.)">
+          <textarea rows="5" placeholder="Tell me about your project..." id="message" required></textarea>
           <button type="submit" class="btn-primary">Send Message →</button>
         </form>
       </div>
@@ -849,7 +889,8 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Moeen - Frontend Developer. All rights reserved. | Built with <i class="fas fa-heart" style="color: #ff6b6b;"></i> using HTML, CSS, JS</p>
+    <p>&copy; 2026 Moeen - Next.js Expert & Frontend Developer. All rights reserved.</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">🚀 Specialized in Next.js • React.js • Tailwind CSS • 3+ Years Experience</p>
   </footer>
 
   <!-- Scripts -->
@@ -858,14 +899,11 @@
   <script src="navbar-loader.js"></script>
   
   <script>
-    // Initialize AOS
     AOS.init({ duration: 1000, once: true, offset: 100 });
 
-    // Typing Animation
-    const words = ["Frontend Developer", "React.js Expert", "Next.js Developer", "UI/UX Designer", "Problem Solver"];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    // Typing Animation - Updated with Next.js Expert
+    const words = ["Next.js Expert", "React.js Developer", "Frontend Architect", "Tailwind CSS Specialist", "Problem Solver"];
+    let wordIndex = 0, charIndex = 0, isDeleting = false;
     const typedElement = document.getElementById("typed");
 
     function typeEffect() {
@@ -890,36 +928,34 @@
     }
     typeEffect();
 
-    // Portfolio Data
+    // Portfolio Data - Updated with Next.js projects
     const portfolioData = [
-      { title: "E-Commerce Platform", category: "react", img: "alternative", desc: "React.js, Redux, Tailwind CSS" },
-      { title: "Analytics Dashboard", category: "next", img: "analytics", desc: "Next.js, Chart.js, Tailwind" },
+      { title: "Next.js E-Commerce", category: "next", img: "alternative", desc: "Next.js 14, Server Components, Stripe, Tailwind" },
+      { title: "Analytics Dashboard", category: "next", img: "analytics", desc: "Next.js, Chart.js, Prisma, PostgreSQL" },
       { title: "Social Media App", category: "react", img: "connections", desc: "React, Firebase, Framer Motion" },
-      { title: "Portfolio 2024", category: "ui", img: "hero", desc: "Modern UI/UX, Animations" },
-      { title: "Project Manager", category: "next", img: "manager", desc: "Next.js, Prisma, PostgreSQL" },
-      { title: "Modern Website", category: "ui", img: "modern", desc: "Responsive Design, Bootstrap" },
+      { title: "Portfolio 2024", category: "ui", img: "hero", desc: "Modern UI/UX, Next.js, Tailwind" },
+      { title: "Project Manager", category: "next", img: "manager", desc: "Next.js, Prisma, PostgreSQL, Tailwind" },
+      { title: "Modern Website", category: "ui", img: "modern", desc: "Responsive Design, Next.js, Bootstrap" },
       { title: "Tech Startup", category: "react", img: "sitting", desc: "React, Node.js, MongoDB" },
-      { title: "Dark Theme UI", category: "ui", img: "theme", desc: "CSS Variables, Dark Mode" }
+      { title: "Dark Theme UI", category: "ui", img: "theme", desc: "CSS Variables, Next.js, Dark Mode" }
     ];
 
     function displayPortfolio(filter = "all") {
       const grid = document.getElementById('portfolioGrid');
       const filtered = filter === "all" ? portfolioData : portfolioData.filter(p => p.category === filter);
-      
       grid.innerHTML = filtered.map(item => `
         <div class="portfolio-item" data-aos="fade-up">
           <img src="images/${item.img}.jpeg" alt="${item.title}" class="portfolio-img" onerror="this.src='https://via.placeholder.com/400x300/6a11cb/ffffff?text=${item.title}'">
           <div class="portfolio-overlay">
             <h3>${item.title}</h3>
             <p>${item.desc}</p>
-            <button class="btn-primary" style="margin-top: 15px; padding: 8px 20px;" onclick="showToast('Project: ${item.title}')">View Project</button>
+            <button class="btn-primary" style="margin-top: 15px; padding: 8px 20px;" onclick="showToast('${item.title} - Next.js project')">View Details</button>
           </div>
         </div>
       `).join('');
     }
     displayPortfolio();
 
-    // Filter Buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -928,56 +964,36 @@
       });
     });
 
-    // Initialize Swiper
     new Swiper('.testimonial-swiper', {
-      loop: true,
-      autoplay: { delay: 4000, disableOnInteraction: false },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      slidesPerView: 1,
-      breakpoints: { 768: { slidesPerView: 2, spaceBetween: 30 } }
+      loop: true, autoplay: { delay: 4000 }, pagination: { el: '.swiper-pagination', clickable: true },
+      slidesPerView: 1, breakpoints: { 768: { slidesPerView: 2, spaceBetween: 30 } }
     });
 
-    // Contact Form
     document.getElementById('contactForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      showToast(`Thanks ${name}! I'll get back to you within 24 hours. ✨`);
+      showToast(`Thanks! I'll get back to you within 24 hours. 🚀`);
       e.target.reset();
     });
 
-    // Toast Function
     function showToast(message) {
       const toast = document.getElementById('toast');
       toast.textContent = message;
       toast.style.display = 'block';
-      setTimeout(() => { toast.style.display = 'none'; }, 3000);
+      setTimeout(() => toast.style.display = 'none', 3000);
     }
     window.showToast = showToast;
 
-    // Scroll Functions
-    function scrollToWork() {
-      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
-    }
-    function scrollToContact() {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
+    function scrollToWork() { document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' }); }
+    function scrollToContact() { document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }
     window.scrollToWork = scrollToWork;
     window.scrollToContact = scrollToContact;
 
-    // Back to Top Button
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
+      backToTop.classList.toggle('show', window.scrollY > 300);
     });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // Counter Animation
     function animateCounter(element, target) {
       let current = 0;
       const increment = target / 50;
@@ -986,9 +1002,7 @@
         if (current >= target) {
           element.textContent = target + '+';
           clearInterval(timer);
-        } else {
-          element.textContent = Math.floor(current) + '+';
-        }
+        } else element.textContent = Math.floor(current) + '+';
       }, 20);
     }
     const observer = new IntersectionObserver((entries) => {

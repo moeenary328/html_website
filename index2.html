@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Moeen | Projects Gallery</title>
+  <title>Moeen | Projects Gallery - Next.js Expert</title>
+  
+  <!-- Meta Description -->
+  <meta name="description" content="Moeen - Next.js Expert Portfolio Gallery. See what I can build: E-commerce, Dashboards, Social Apps, and more. 3+ years experience.">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -99,6 +102,154 @@
       font-weight: 500;
       margin-bottom: 20px;
       color: white;
+    }
+
+    /* ========== WHAT I CAN BUILD SECTION ========== */
+    .capabilities-section {
+      padding: 80px 10%;
+      background: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .section-title p {
+      color: #6c757d;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .capability-card {
+      background: #f8f9fa;
+      border-radius: 24px;
+      padding: 35px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid #e9ecef;
+    }
+    
+    .capability-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+      border-color: #6a11cb;
+    }
+    
+    .capability-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .capability-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+    
+    .capability-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    
+    .capability-card p {
+      color: #6c757d;
+      line-height: 1.6;
+    }
+    
+    .capability-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .capability-tags span {
+      background: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #6a11cb;
+    }
+
+    /* ========== PROBLEMS I SOLVE SECTION ========== */
+    .problems-section {
+      padding: 80px 10%;
+      background: linear-gradient(135deg, #f8f9fa, #fff);
+    }
+    
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .problem-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      gap: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .problem-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 10px 25px rgba(106,17,203,0.1);
+    }
+    
+    .problem-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(106,17,203,0.1);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .problem-icon i {
+      font-size: 1.5rem;
+      color: #6a11cb;
+    }
+    
+    .problem-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .problem-content p {
+      color: #6c757d;
+      line-height: 1.5;
+      font-size: 0.9rem;
     }
 
     /* ========== STATS SECTION ========== */
@@ -343,59 +494,108 @@
       border-radius: 24px;
       grid-column: 1 / -1;
     }
-    
-    .no-results i {
-      font-size: 3rem;
-      color: #adb5bd;
-      margin-bottom: 20px;
-    }
-    
-    .no-results p {
-      color: #6c757d;
-    }
 
-    /* ========== CTA SECTION ========== */
-    .cta-section {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
+    /* ========== BEAUTIFUL CONTACT FORM SECTION ========== */
+    .contact-form-section {
       padding: 80px 10%;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-form-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(106,17,203,0.1) 0%, transparent 70%);
+      animation: rotateBg 20s linear infinite;
+    }
+    
+    .form-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    }
+    
+    .form-container h2 {
       text-align: center;
-      margin-top: 40px;
-    }
-    
-    .cta-section h2 {
       font-size: 2rem;
-      color: white;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     
-    .cta-section p {
-      color: rgba(255,255,255,0.7);
+    .form-container > p {
+      text-align: center;
+      color: #6c757d;
       margin-bottom: 30px;
     }
     
-    .btn-primary {
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid #e9ecef;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #6a11cb;
+      box-shadow: 0 0 0 3px rgba(106,17,203,0.1);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .submit-btn {
+      width: 100%;
       background: linear-gradient(135deg, #6a11cb, #2575fc);
       color: white;
-      padding: 14px 40px;
+      padding: 16px;
       border: none;
-      border-radius: 50px;
+      border-radius: 16px;
+      font-size: 1.1rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 1rem;
+      margin-top: 10px;
     }
     
-    .btn-primary:hover {
+    .submit-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(106,17,203,0.4);
     }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: #0f0f1a;
-      padding: 40px;
+    
+    .form-footer {
       text-align: center;
-      color: rgba(255,255,255,0.6);
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+    
+    .form-footer a {
+      color: #6a11cb;
+      text-decoration: none;
     }
 
     /* ========== TOAST ========== */
@@ -458,9 +658,6 @@
       .page-header h1 {
         font-size: 2rem;
       }
-      .page-header p {
-        font-size: 1rem;
-      }
       .projects-grid {
         grid-template-columns: 1fr;
       }
@@ -468,8 +665,24 @@
         padding: 8px 18px;
         font-size: 0.8rem;
       }
-      .stat-card h3 {
-        font-size: 1.5rem;
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .form-container {
+        padding: 30px;
+      }
+      .capabilities-grid {
+        grid-template-columns: 1fr;
+      }
+      .problems-grid {
+        grid-template-columns: 1fr;
+      }
+      .problem-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .problem-icon {
+        margin: 0 auto;
       }
     }
   </style>
@@ -489,9 +702,119 @@
 
   <!-- Page Header -->
   <div class="page-header" data-aos="fade-up">
-    <span class="badge">✨ My Portfolio</span>
-    <h1>Creative <br>Projects Gallery</h1>
-    <p>Explore 16+ stunning projects that showcase my passion for modern web development and design excellence</p>
+    <span class="badge">🚀 Next.js Expert Portfolio</span>
+    <h1>My Creative <br>Projects Gallery</h1>
+    <p>Explore 16+ stunning projects built with Next.js, React, and modern technologies</p>
+  </div>
+
+  <!-- WHAT I CAN BUILD SECTION - NEW -->
+  <div class="capabilities-section" data-aos="fade-up">
+    <div class="section-title">
+      <h2>What I Can <span class="gradient-text">Build For You</span></h2>
+      <p>Modern, scalable, and high-performance web applications tailored to your needs</p>
+    </div>
+    <div class="capabilities-grid">
+      <div class="capability-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="capability-icon"><i class="fas fa-store"></i></div>
+        <h3>E-Commerce Platforms</h3>
+        <p>Full-featured online stores with cart, payment integration, and admin dashboard</p>
+        <div class="capability-tags">
+          <span>Next.js</span><span>Stripe</span><span>MongoDB</span>
+        </div>
+      </div>
+      <div class="capability-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="capability-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Analytics Dashboards</h3>
+        <p>Real-time data visualization with interactive charts and business intelligence</p>
+        <div class="capability-tags">
+          <span>Chart.js</span><span>D3.js</span><span>Tailwind</span>
+        </div>
+      </div>
+      <div class="capability-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="capability-icon"><i class="fas fa-users"></i></div>
+        <h3>Social Media Apps</h3>
+        <p>Connect people with real-time messaging, posts, and interactive features</p>
+        <div class="capability-tags">
+          <span>Socket.io</span><span>Firebase</span><span>Next.js</span>
+        </div>
+      </div>
+      <div class="capability-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="capability-icon"><i class="fas fa-tasks"></i></div>
+        <h3>Project Management Tools</h3>
+        <p>Task management, drag-and-drop boards, team collaboration platforms</p>
+        <div class="capability-tags">
+          <span>Prisma</span><span>PostgreSQL</span><span>Next.js</span>
+        </div>
+      </div>
+      <div class="capability-card" data-aos="zoom-in" data-aos-delay="500">
+        <div class="capability-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Startup Landing Pages</h3>
+        <p>High-converting landing pages with animations and SEO optimization</p>
+        <div class="capability-tags">
+          <span>Tailwind</span><span>Framer Motion</span><span>Next.js</span>
+        </div>
+      </div>
+      <div class="capability-card" data-aos="zoom-in" data-aos-delay="600">
+        <div class="capability-icon"><i class="fas fa-palette"></i></div>
+        <h3>UI/UX Design Systems</h3>
+        <p>Complete component libraries with dark mode and responsive design</p>
+        <div class="capability-tags">
+          <span>Figma</span><span>Storybook</span><span>Tailwind</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEMS I SOLVE SECTION - NEW -->
+  <div class="problems-section" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Problems I <span class="gradient-text">Solve</span></h2>
+      <p>Turning complex challenges into elegant solutions</p>
+    </div>
+    <div class="problems-grid">
+      <div class="problem-card" data-aos="fade-right" data-aos-delay="100">
+        <div class="problem-icon"><i class="fas fa-tachometer-alt"></i></div>
+        <div class="problem-content">
+          <h3>Slow Loading Websites</h3>
+          <p>I optimize performance with Next.js SSR/SSG, lazy loading, and image optimization to achieve 90+ Lighthouse scores.</p>
+        </div>
+      </div>
+      <div class="problem-card" data-aos="fade-right" data-aos-delay="200">
+        <div class="problem-icon"><i class="fas fa-search"></i></div>
+        <div class="problem-content">
+          <h3>Poor SEO Rankings</h3>
+          <p>Next.js meta tags, sitemap generation, and structured data help your site rank higher on Google.</p>
+        </div>
+      </div>
+      <div class="problem-card" data-aos="fade-right" data-aos-delay="300">
+        <div class="problem-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div class="problem-content">
+          <h3>Non-Responsive Designs</h3>
+          <p>I build fully responsive websites that look perfect on all devices—mobile, tablet, and desktop.</p>
+        </div>
+      </div>
+      <div class="problem-card" data-aos="fade-left" data-aos-delay="400">
+        <div class="problem-icon"><i class="fas fa-code-branch"></i></div>
+        <div class="problem-content">
+          <h3>Unmaintainable Code</h3>
+          <p>Clean, modular, and well-documented code that's easy to scale and maintain long-term.</p>
+        </div>
+      </div>
+      <div class="problem-card" data-aos="fade-left" data-aos-delay="500">
+        <div class="problem-icon"><i class="fas fa-clock"></i></div>
+        <div class="problem-content">
+          <h3>Long Development Time</h3>
+          <p>I deliver projects faster using efficient workflows, reusable components, and modern frameworks.</p>
+        </div>
+      </div>
+      <div class="problem-card" data-aos="fade-left" data-aos-delay="600">
+        <div class="problem-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="problem-content">
+          <h3>Security Vulnerabilities</h3>
+          <p>Best practices for authentication, data validation, and protection against common attacks.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Stats Section -->
@@ -513,7 +836,7 @@
     </div>
     <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
       <i class="fas fa-clock"></i>
-      <h3>5+</h3>
+      <h3>3+</h3>
       <p>Years Exp</p>
     </div>
   </div>
@@ -540,43 +863,74 @@
     <div class="projects-grid" id="projectsGrid"></div>
   </div>
 
-  <!-- CTA Section -->
-  <div class="cta-section" data-aos="fade-up">
-    <h2>Ready to Create Something Amazing?</h2>
-    <p>Let's collaborate and bring your vision to life with cutting-edge technology and stunning design</p>
-    <button class="btn-primary" onclick="window.location.href='index.html#contact'">
-      Hire Me Now <i class="fas fa-arrow-right"></i>
-    </button>
+  <!-- Beautiful Contact Form Section - NEW -->
+  <div class="contact-form-section" data-aos="fade-up">
+    <div class="form-container">
+      <h2>Let's <span class="gradient-text">Build Something Great</span></h2>
+      <p>I'll get back to you within 24 hours to discuss your Next.js project.
+</p>
+      
+      <form id="galleryContactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" id="formName" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" id="formEmail" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <select id="formProjectType">
+            <option value="">Select Project Type</option>
+            <option value="nextjs">Next.js Application</option>
+            <option value="react">React.js Website</option>
+            <option value="ecommerce">E-Commerce Platform</option>
+            <option value="dashboard">Dashboard / Analytics</option>
+            <option value="landing">Landing Page</option>
+            <option value="other">Other / Custom Project</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <textarea rows="4" placeholder="Tell me about your project, requirements, and timeline..." id="formMessage" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <input type="text" placeholder="Your Budget Range (Optional)" id="formBudget">
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        
+        <div class="form-footer">
+          <p>Or reach me directly at <a href="mailto:moeenthaheem1@gmail.com">moeenthaheem1@gmail.com</a> | <a href="https://wa.me/923186314829" target="_blank">WhatsApp</a></p>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <footer>
-    <p>© 2026 Moeen | Frontend Developer. All rights reserved.</p>
-    <p style="margin-top: 10px; font-size: 0.8rem;">
-      <i class="fas fa-code"></i> Built with passion | 16+ Projects Showcase
-    </p>
-  </footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="navbar-loader.js"></script>
   
   <script>
-    // Initialize AOS
     AOS.init({ duration: 800, once: true, offset: 100 });
 
     // Projects Data
     const projects = [
-      { name: "E-Commerce Platform", category: "web", img: "ecommerce", tech: ["React.js", "Redux", "Tailwind"], desc: "Full-featured online store with cart and payment integration" },
+      { name: "Next.js E-Commerce", category: "web", img: "ecommerce", tech: ["Next.js", "Redux", "Stripe", "Tailwind"], desc: "Full-featured online store with cart and payment integration" },
       { name: "E-Commerce Admin", category: "web", img: "ecommerce2", tech: ["Next.js", "MongoDB", "Stripe"], desc: "Admin dashboard for managing products and orders" },
-      { name: "Analytics Dashboard", category: "dashboard", img: "dashboard", tech: ["Chart.js", "React", "Tailwind"], desc: "Real-time data visualization with interactive charts" },
+      { name: "Analytics Dashboard", category: "dashboard", img: "dashboard", tech: ["Next.js", "Chart.js", "Tailwind"], desc: "Real-time data visualization with interactive charts" },
       { name: "Data Insights", category: "dashboard", img: "dashboard2", tech: ["D3.js", "Express", "MongoDB"], desc: "Advanced analytics platform for business intelligence" },
       { name: "Social Media App", category: "web", img: "socialapp", tech: ["React", "Firebase", "Framer"], desc: "Connect with friends, share posts, and chat in real-time" },
       { name: "Social Connect", category: "web", img: "socialapp2", tech: ["Next.js", "Socket.io", "Tailwind"], desc: "Real-time messaging and social networking platform" },
-      { name: "Portfolio 2024", category: "ui", img: "portfolio2024", tech: ["HTML5", "CSS3", "GSAP"], desc: "Creative portfolio with smooth animations and modern design" },
+      { name: "Portfolio 2024", category: "ui", img: "portfolio2024", tech: ["Next.js", "Tailwind", "GSAP"], desc: "Creative portfolio with smooth animations and modern design" },
       { name: "Portfolio Pro", category: "ui", img: "portfolio20242", tech: ["React", "Framer Motion", "SCSS"], desc: "Professional portfolio template for developers" },
       { name: "Project Manager", category: "ui", img: "projecttool", tech: ["Next.js", "Prisma", "PostgreSQL"], desc: "Task management tool with drag-and-drop functionality" },
       { name: "Task Flow", category: "ui", img: "projecttool2", tech: ["Vue.js", "Vuex", "Tailwind"], desc: "Kanban-style project management application" },
-      { name: "Agency Website", category: "startup", img: "agency", tech: ["Bootstrap", "SCSS", "jQuery"], desc: "Modern agency landing page with creative design" },
+      { name: "Agency Website", category: "startup", img: "agency", tech: ["Next.js", "Tailwind", "Framer"], desc: "Modern agency landing page with creative design" },
       { name: "Agency Plus", category: "startup", img: "agency2", tech: ["React", "Tailwind", "Framer"], desc: "Premium agency website with interactive elements" },
       { name: "Dark UI Kit", category: "ui", img: "darkui", tech: ["CSS3", "JavaScript", "Figma"], desc: "Complete UI component library with dark mode" },
       { name: "Neo UI", category: "ui", img: "darkui2", tech: ["Tailwind", "React", "Storybook"], desc: "Modern neumorphic design system" },
@@ -587,7 +941,6 @@
     let currentCategory = "all";
     let currentSearch = "";
 
-    // Display Projects
     function displayProjects() {
       const grid = document.getElementById('projectsGrid');
       let filtered = projects;
@@ -636,7 +989,6 @@
       AOS.refresh();
     }
 
-    // Filter Functionality
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -646,7 +998,6 @@
       });
     });
 
-    // Search Functionality
     const searchInput = document.getElementById('searchInput');
     const searchClear = document.getElementById('searchClear');
     
@@ -669,7 +1020,6 @@
     
     window.resetSearch = resetSearch;
 
-    // Toast Function
     function showToast(message) {
       const toast = document.getElementById('toast');
       toast.textContent = message;
@@ -684,7 +1034,17 @@
     window.showProjectDetail = showProjectDetail;
     window.showToast = showToast;
 
-    // Back to Top Button
+    // Gallery Contact Form
+    const galleryForm = document.getElementById('galleryContactForm');
+    if (galleryForm) {
+      galleryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('formName').value;
+        showToast(`Thanks ${name}! this chat is currently stoped please contact on whatsapp or email `);
+        galleryForm.reset();
+      });
+    }
+
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       backToTop.classList.toggle('show', window.scrollY > 300);
@@ -694,7 +1054,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Initial Display
     displayProjects();
   </script>
 </body>

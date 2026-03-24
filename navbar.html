@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- 
   ============================================
-  NAVBAR.HTML - Premium Responsive Navbar (Fixed Mobile Menu)
+  NAVBAR.HTML - Buttons Always Visible (No Hamburger)
   ============================================
 -->
 
@@ -15,7 +15,7 @@
     <span class="logo-text">Moeen</span>
   </a>
 
-  <!-- Navigation Links -->
+  <!-- Navigation Links - Always Visible -->
   <ul class="navbar-links" id="navbarLinks">
     <li><a href="index.html" class="nav-link nav-home">
       <i class="fas fa-home"></i>
@@ -39,12 +39,18 @@
     </a></li>
     <li><a href="index2.html" class="nav-link nav-gallery">
       <i class="fas fa-grid-2"></i>
-      <span>Gallery</span>
+      <span>About</span>
     </a></li>
     <li><a href="https://www.calculatingwithme.com/" target="_blank" class="nav-link nav-oldsite">
       <i class="fas fa-external-link-alt"></i>
       <span>2nd Site</span>
     </a></li>
+    <li><a href="https://wa.me/923186314829" 
+       target="_blank" 
+       class="nav-link nav-whatsapp">
+  <i class="fab fa-whatsapp"></i>
+  <span>WhatsApp</span>
+</a></li>
   </ul>
 
   <!-- Search Bar -->
@@ -53,16 +59,11 @@
     <input type="text" class="search-input" id="searchInput" placeholder="Search projects...">
     <i class="fas fa-times search-clear" id="searchClear"></i>
   </div>
-
-  <!-- Mobile Menu Toggle Button -->
-  <button class="mobile-menu-btn" id="mobileMenuBtn">
-    <i class="fas fa-bars"></i>
-  </button>
 </nav>
 
 <style>
   /* ============================================
-     PREMIUM NAVBAR STYLES - FULLY RESPONSIVE
+     NAVBAR STYLES - ALWAYS VISIBLE BUTTONS
      ============================================ */
   
   * {
@@ -76,127 +77,90 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     z-index: 10000;
-    padding: 12px 5%;
+    padding: 12px 20px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
   }
 
   /* Scroll Effect */
   .pro-navbar.scrolled {
-    padding: 8px 5%;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 8px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   /* ========== LOGO STYLES ========== */
   .navbar-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     text-decoration: none;
-    position: relative;
-  }
-
-  .logo-wrapper {
-    position: relative;
+    flex-shrink: 0;
   }
 
   .logo-img {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     object-fit: cover;
-    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
-    position: relative;
-    z-index: 2;
+    box-shadow: 0 2px 10px rgba(106, 17, 203, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .logo-img:hover {
+    transform: scale(1.05);
   }
 
   .logo-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(106, 17, 203, 0.6), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-  }
-
-  .navbar-logo:hover .logo-img {
-    transform: scale(1.08) rotate(5deg);
-  }
-
-  .navbar-logo:hover .logo-glow {
-    opacity: 0.8;
-    animation: pulseGlow 1s ease;
-  }
-
-  @keyframes pulseGlow {
-    0% { transform: scale(0.8); opacity: 0; }
-    50% { transform: scale(1.2); opacity: 0.6; }
-    100% { transform: scale(1); opacity: 0; }
+    display: none;
   }
 
   .logo-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 800;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
-    transition: all 0.3s ease;
   }
 
-  .navbar-logo:hover .logo-text {
-    letter-spacing: 0px;
-  }
-
-  /* ========== NAVIGATION LINKS ========== */
+  /* ========== NAVIGATION LINKS - ALWAYS VISIBLE ========== */
   .navbar-links {
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
   }
 
   .nav-link {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
+    gap: 6px;
+    padding: 8px 14px;
     text-decoration: none;
     color: #1a1a2e;
     font-weight: 500;
-    font-size: 0.95rem;
-    border-radius: 50px;
-    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    position: relative;
+    font-size: 0.9rem;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
   }
 
   .nav-link i {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
+    font-size: 0.9rem;
   }
 
   .nav-link:hover {
-    background: linear-gradient(135deg, rgba(106, 17, 203, 0.08), rgba(37, 117, 252, 0.08));
-    transform: translateY(-2px);
-  }
-
-  .nav-link:hover i {
+    background: rgba(106, 17, 203, 0.1);
     transform: translateY(-2px);
   }
 
@@ -204,25 +168,26 @@
   .nav-link.active {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
-    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+    box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
   }
 
   /* Old Site Button */
   .nav-oldsite {
-    background: linear-gradient(135deg, rgba(106, 17, 203, 0.12), rgba(37, 117, 252, 0.12));
-    border: 1px solid rgba(106, 17, 203, 0.3);
+    background: rgba(106, 17, 203, 0.1);
+    border: 1px solid rgba(106, 17, 203, 0.2);
   }
 
   .nav-oldsite:hover {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border-color: transparent;
     color: white;
+    border-color: transparent;
   }
 
   /* ========== SEARCH BAR ========== */
   .navbar-search {
     position: relative;
-    min-width: 260px;
+    min-width: 220px;
+    flex-shrink: 0;
   }
 
   .search-input {
@@ -230,10 +195,9 @@
     background: #f5f5f5;
     border: 1px solid #e0e0e0;
     border-radius: 50px;
-    padding: 12px 20px 12px 45px;
-    font-size: 0.95rem;
+    padding: 8px 16px 8px 38px;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
-    font-family: inherit;
   }
 
   .search-input:focus {
@@ -243,423 +207,230 @@
     box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
   }
 
-  .search-input::placeholder {
-    color: #adb5bd;
-  }
-
   .search-icon {
     position: absolute;
-    left: 18px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
-    color: #adb5bd;
-    font-size: 1rem;
+    color: #999;
+    font-size: 0.85rem;
     pointer-events: none;
   }
 
   .search-clear {
     position: absolute;
-    right: 18px;
+    right: 14px;
     top: 50%;
     transform: translateY(-50%);
-    color: #adb5bd;
+    color: #999;
     cursor: pointer;
     display: none;
-    transition: color 0.3s ease;
   }
 
   .search-clear:hover {
     color: #ff6b6b;
   }
 
-  /* ========== MOBILE MENU BUTTON ========== */
-  .mobile-menu-btn {
-    display: none;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-menu-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
-  }
-
-  /* ========== RESPONSIVE DESIGN - FIXED MOBILE MENU ========== */
-  @media (max-width: 1024px) {
-    .navbar-links {
-      gap: 4px;
-    }
+  /* ========== RESPONSIVE - BUTTONS ALWAYS VISIBLE ========== */
+  
+  /* Tablet */
+  @media (max-width: 1100px) {
     .nav-link {
-      padding: 8px 14px;
-      font-size: 0.85rem;
+      padding: 6px 10px;
+      font-size: 0.8rem;
     }
     .navbar-search {
-      min-width: 220px;
+      min-width: 180px;
     }
   }
 
-  @media (max-width: 900px) {
+  /* Mobile - Buttons wrap and always visible */
+  @media (max-width: 850px) {
     .pro-navbar {
-      padding: 12px 4%;
-    }
-    
-    /* Mobile Menu Button - Show */
-    .mobile-menu-btn {
-      display: flex;
-      order: 3;
-    }
-    
-    /* Navigation Links - Hide by default */
-    .navbar-links {
-      display: none;
-      width: 100%;
+      padding: 10px 15px;
       flex-direction: column;
       align-items: stretch;
-      gap: 10px;
-      padding: 20px 0 10px;
-      order: 4;
-      background: transparent;
     }
     
-    /* When menu is open - Show */
-    .navbar-links.show {
-      display: flex;
-      animation: slideDown 0.3s ease;
-    }
-    
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    /* Mobile Menu Links Style */
-    .nav-link {
-      justify-content: center;
-      padding: 14px 20px;
-      font-size: 1rem;
-      width: 100%;
-    }
-    
-    .nav-link i {
-      font-size: 1.1rem;
-    }
-    
-    /* Search Bar */
-    .navbar-search {
-      order: 2;
-      flex: 1;
-      min-width: auto;
-    }
-    
-    /* Logo */
     .navbar-logo {
-      order: 1;
+      justify-content: center;
+      margin-bottom: 5px;
     }
     
-    .search-input {
-      padding: 10px 20px 10px 42px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .pro-navbar {
-      padding: 10px 4%;
-    }
-    
-    .logo-img {
-      width: 38px;
-      height: 38px;
-    }
-    
-    .logo-text {
-      font-size: 1.1rem;
-    }
-    
-    .navbar-search {
-      max-width: 180px;
-    }
-    
-    .search-input {
-      padding: 8px 15px 8px 38px;
-      font-size: 0.85rem;
-    }
-    
-    .search-icon {
-      left: 14px;
-      font-size: 0.85rem;
-    }
-    
-    .mobile-menu-btn {
-      width: 40px;
-      height: 40px;
-      font-size: 1rem;
+    .navbar-links {
+      justify-content: center;
+      gap: 8px;
+      margin: 5px 0;
     }
     
     .nav-link {
-      padding: 12px 16px;
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 450px) {
-    .navbar-search {
-      max-width: 140px;
-    }
-    
-    .search-input {
-      padding: 7px 12px 7px 35px;
+      padding: 8px 12px;
       font-size: 0.8rem;
     }
     
-    .search-icon {
-      left: 12px;
-      font-size: 0.75rem;
+    .navbar-search {
+      width: 100%;
+      min-width: auto;
+      margin-top: 5px;
+    }
+    
+    .search-input {
+      padding: 8px 16px 8px 38px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 600px) {
+    .navbar-links {
+      gap: 6px;
+    }
+    
+    .nav-link {
+      padding: 6px 10px;
+      font-size: 0.7rem;
+    }
+    
+    .nav-link i {
+      font-size: 0.7rem;
     }
     
     .logo-text {
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
     
     .logo-img {
-      width: 32px;
-      height: 32px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  /* Extra Small Mobile - Buttons adjust */
+  @media (max-width: 480px) {
+    .navbar-links {
+      gap: 5px;
+    }
+    
+    .nav-link {
+      padding: 5px 8px;
+      font-size: 0.65rem;
+    }
+    
+    .nav-link span {
+      display: inline-block;
+    }
+    
+    .logo-text {
+      font-size: 0.9rem;
     }
   }
 
   /* Body padding for fixed navbar */
   body {
-    padding-top: 80px !important;
+    padding-top: 85px !important;
   }
   
-  @media (max-width: 900px) {
+  @media (max-width: 850px) {
     body {
-      padding-top: 85px !important;
+      padding-top: 130px !important;
     }
   }
   
   @media (max-width: 600px) {
     body {
-      padding-top: 80px !important;
+      padding-top: 120px !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding-top: 115px !important;
     }
   }
 </style>
 
 <script>
   // ============================================
-  // NAVBAR JAVASCRIPT - FIXED MOBILE MENU
+  // SIMPLE NAVBAR JS - NO HAMBURGER MENU
   // ============================================
 
   (function() {
-    // DOM Elements
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navbarLinks = document.getElementById('navbarLinks');
     const navbar = document.getElementById('proNavbar');
     
-    // ========== 1. MOBILE MENU TOGGLE (FIXED) ==========
-    function setupMobileMenu() {
-      if (!mobileBtn || !navbarLinks) return;
-      
-      // Toggle menu on button click
-      mobileBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navbarLinks.classList.toggle('show');
-        
-        // Change icon
-        const icon = this.querySelector('i');
-        if (navbarLinks.classList.contains('show')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      });
-      
-      // Close menu when clicking a link
-      const allLinks = navbarLinks.querySelectorAll('.nav-link');
-      allLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          navbarLinks.classList.remove('show');
-          if (mobileBtn) {
-            const icon = mobileBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      });
-      
-      // Close menu when clicking outside (optional)
-      document.addEventListener('click', function(event) {
-        if (navbarLinks.classList.contains('show')) {
-          // Check if click is outside navbar
-          const isClickInside = navbar?.contains(event.target);
-          if (!isClickInside) {
-            navbarLinks.classList.remove('show');
-            if (mobileBtn) {
-              const icon = mobileBtn.querySelector('i');
-              icon.classList.remove('fa-times');
-              icon.classList.add('fa-bars');
-            }
-          }
-        }
-      });
-    }
-    
-    // ========== 2. SCROLL EFFECT ==========
-    function handleScrollEffect() {
-      if (navbar) {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
+    // ========== 1. SCROLL EFFECT ==========
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
-    }
+    });
     
-    // ========== 3. ACTIVE PAGE HIGHLIGHT ==========
+    // ========== 2. ACTIVE PAGE HIGHLIGHT ==========
     function highlightActivePage() {
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       const currentHash = window.location.hash;
       
+      // Remove all active classes
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
       });
       
+      // Add active class based on current page
       if (currentPage === 'index.html') {
         if (currentHash === '#skills') {
-          document.querySelector('.nav-skills')?.classList.add('active');
+          const skillLink = document.querySelector('.nav-skills');
+          if (skillLink) skillLink.classList.add('active');
         } else if (currentHash === '#services') {
-          document.querySelector('.nav-services')?.classList.add('active');
+          const servicesLink = document.querySelector('.nav-services');
+          if (servicesLink) servicesLink.classList.add('active');
         } else if (currentHash === '#portfolio') {
-          document.querySelector('.nav-work')?.classList.add('active');
+          const workLink = document.querySelector('.nav-work');
+          if (workLink) workLink.classList.add('active');
         } else if (currentHash === '#contact') {
-          document.querySelector('.nav-contact')?.classList.add('active');
+          const contactLink = document.querySelector('.nav-contact');
+          if (contactLink) contactLink.classList.add('active');
         } else {
-          document.querySelector('.nav-home')?.classList.add('active');
+          const homeLink = document.querySelector('.nav-home');
+          if (homeLink) homeLink.classList.add('active');
         }
       } else if (currentPage === 'index2.html') {
-        document.querySelector('.nav-gallery')?.classList.add('active');
+        const galleryLink = document.querySelector('.nav-gallery');
+        if (galleryLink) galleryLink.classList.add('active');
       }
     }
     
-    // ========== 4. SEARCH FUNCTIONALITY ==========
-    function setupSearch() {
-      const searchInput = document.getElementById('searchInput');
-      const searchClear = document.getElementById('searchClear');
-      
-      if (searchInput) {
-        function handleSearch() {
-          const searchTerm = searchInput.value.toLowerCase();
-          if (searchTerm) {
-            searchClear.style.display = 'block';
-          } else {
-            searchClear.style.display = 'none';
-          }
-          
-          if (window.location.pathname.includes('index2.html') && typeof window.filterProjects === 'function') {
-            window.filterProjects(searchTerm);
-          }
+    // Call on load and hash change
+    highlightActivePage();
+    window.addEventListener('hashchange', highlightActivePage);
+    
+    // ========== 3. SEARCH FUNCTIONALITY ==========
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        if (searchTerm) {
+          searchClear.style.display = 'block';
+        } else {
+          searchClear.style.display = 'none';
         }
         
-        searchInput.addEventListener('input', handleSearch);
-        
-        if (searchClear) {
-          searchClear.addEventListener('click', () => {
-            searchInput.value = '';
-            searchClear.style.display = 'none';
-            if (window.location.pathname.includes('index2.html') && typeof window.filterProjects === 'function') {
-              window.filterProjects('');
-            }
-            showToast('Search cleared! ✨');
-          });
+        // For gallery page search
+        if (window.location.pathname.includes('index2.html') && typeof window.filterProjects === 'function') {
+          window.filterProjects(searchTerm);
         }
-      }
+      });
     }
     
-    // ========== 5. TOAST NOTIFICATION ==========
-    function showToast(message) {
-      let toast = document.getElementById('dynamic-toast');
-      if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'dynamic-toast';
-        toast.style.cssText = `
-          position: fixed;
-          bottom: 30px;
-          right: 30px;
-          background: linear-gradient(135deg, #6a11cb, #2575fc);
-          color: white;
-          padding: 12px 25px;
-          border-radius: 50px;
-          z-index: 10001;
-          font-size: 0.9rem;
-          font-weight: 500;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-          opacity: 0;
-          transform: translateX(100px);
-          transition: all 0.3s ease;
-          pointer-events: none;
-        `;
-        document.body.appendChild(toast);
-      }
-      
-      toast.textContent = message;
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateX(0)';
-      
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateX(100px)';
-      }, 3000);
-    }
-    
-    // ========== 6. RESIZE HANDLER ==========
-    function handleResize() {
-      if (window.innerWidth > 900 && navbarLinks) {
-        navbarLinks.classList.remove('show');
-        if (mobileBtn) {
-          const icon = mobileBtn.querySelector('i');
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
+    if (searchClear) {
+      searchClear.addEventListener('click', function() {
+        searchInput.value = '';
+        searchClear.style.display = 'none';
+        if (window.location.pathname.includes('index2.html') && typeof window.filterProjects === 'function') {
+          window.filterProjects('');
         }
-      }
-    }
-    
-    // ========== 7. HASH CHANGE HANDLER ==========
-    function handleHashChange() {
-      highlightActivePage();
-    }
-    
-    // ========== 8. INITIALIZE ALL ==========
-    function initNavbar() {
-      setupMobileMenu();
-      handleScrollEffect();
-      highlightActivePage();
-      setupSearch();
-      
-      window.addEventListener('scroll', handleScrollEffect);
-      window.addEventListener('hashchange', handleHashChange);
-      window.addEventListener('resize', handleResize);
-    }
-    
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initNavbar);
-    } else {
-      initNavbar();
+      });
     }
   })();
 </script>
