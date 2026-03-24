@@ -20,7 +20,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <!-- Swiper JS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   
   <style>
     * {
@@ -73,10 +73,6 @@
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
     }
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 5px rgba(106,17,203,0.3); }
-      50% { box-shadow: 0 0 30px rgba(106,17,203,0.6); }
-    }
     @keyframes slideInLeft {
       from {
         opacity: 0;
@@ -97,122 +93,6 @@
         transform: translateX(0);
       }
     }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    /* ========== NAVBAR WITH LOGO ========== */
-    nav {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(20px);
-      border-radius: 60px;
-      padding: 8px 25px;
-      z-index: 1000;
-      box-shadow: var(--shadow-sm);
-      border: var(--border);
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-    
-    /* Logo Styles */
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      position: relative;
-    }
-    
-    .logo-img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-      box-shadow: 0 2px 10px rgba(106,17,203,0.3);
-    }
-    
-    .logo-img:hover {
-      transform: scale(1.05) rotate(5deg);
-    }
-    
-    .logo-text {
-      font-size: 1.3rem;
-      font-weight: 800;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 600;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient);
-      transition: width 0.3s ease;
-    }
-    
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
-    
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
 
     /* ========== HERO SECTION ========== */
     .hero {
@@ -220,7 +100,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 10%;
+      padding: 120px 10% 50px;
       position: relative;
       overflow: hidden;
     }
@@ -308,8 +188,6 @@
       transform: scale(1.02);
     }
 
-    
-
     /* ========== BUTTONS ========== */
     .btn-primary {
       background: var(--gradient);
@@ -341,6 +219,26 @@
       background: var(--gradient);
       color: white;
       border-color: transparent;
+    }
+    
+    /* Old Site Button Style */
+    .btn-old {
+      display: inline-block;
+      background: transparent;
+      color: #6a11cb;
+      padding: 14px 40px;
+      border: 2px solid #6a11cb;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 15px;
+    }
+    .btn-old:hover {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border-color: transparent;
+      transform: translateY(-3px);
     }
 
     /* ========== SKILLS SECTION ========== */
@@ -500,6 +398,16 @@
       cursor: pointer;
       animation: scaleIn 0.5s ease;
     }
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
     .portfolio-img {
       width: 100%;
       height: 280px;
@@ -645,6 +553,16 @@
       z-index: 1000;
       animation: slideInLeft 0.3s ease;
     }
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
     /* ========== BACK TO TOP ========== */
     .back-to-top {
@@ -673,7 +591,7 @@
       transform: translateY(-5px);
     }
 
-    /* ========== RESPONSIVE WITH LOGO ========== */
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 968px) {
       .hero {
         flex-direction: column;
@@ -692,44 +610,16 @@
       .contact-container {
         grid-template-columns: 1fr;
       }
-      
-      nav {
-        width: 95%;
-        padding: 10px 15px;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      
-      .nav-logo {
-        order: 1;
-      }
-      
-      .nav-links {
-        order: 2;
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-      }
-      
-      .nav-links a {
-        font-size: 0.8rem;
-      }
-      
-      .logo-text {
-        font-size: 1rem;
-      }
-      
-      .logo-img {
-        width: 32px;
-        height: 32px;
-      }
-      
       .section-header h2 {
         font-size: 2rem;
       }
       .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+      .btn-primary, .btn-outline, .btn-old {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 5px;
       }
     }
 
@@ -737,24 +627,16 @@
       .hero-content h1 {
         font-size: 1.8rem;
       }
-      .btn-primary, .btn-outline {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-      }
       .portfolio-grid {
         grid-template-columns: 1fr;
-      }
-      .nav-links a {
-        font-size: 0.7rem;
-      }
-      .logo-img {
-        width: 28px;
-        height: 28px;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- Navbar will be loaded dynamically by navbar-loader.js -->
+  <div id="navbar-container"></div>
 
   <!-- Back to Top Button -->
   <div class="back-to-top" id="backToTop">
@@ -763,25 +645,6 @@
 
   <!-- Toast Notification -->
   <div class="toast" id="toast"></div>
-
-  <!-- Navbar with Logo -->
-  <nav>
-    <a href="#home" class="nav-logo">
-      <img src="logo.jpeg" alt="Moeen Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/40/6a11cb/ffffff?text=M'">
-      <span class="logo-text">Moeen</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Work</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="index2.html">Gallery</a></li>
-      <li><a href="https://www.calculatingwithme.com/" target="_blank" class="old-site-link">
-    <i class="fas fa-archive"></i> main site
-  </a></li>
-    </ul>
-  </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -800,8 +663,8 @@
         <button class="btn-primary" onclick="scrollToWork()">View My Work</button>
         <button class="btn-outline" onclick="scrollToContact()">Contact Me</button>
         <a href="https://www.calculatingwithme.com/" target="_blank" class="btn-old">
-    <i class="fas fa-link"></i> Visit my Website
-  </a>
+          <i class="fas fa-external-link-alt"></i> Visit Main Site
+        </a>
       </div>
       <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
         <div class="stat">
@@ -963,7 +826,7 @@
       <div class="contact-info" data-aos="fade-right">
         <h3>Let's Talk</h3>
         <p style="margin: 20px 0;">Have a project in mind? Let's discuss how we can bring your vision to life with React, Next.js, or any modern framework.</p>
-        <p><i class="fas fa-envelope"></i> moeenary@gmail.com</p>
+        <p><i class="fas fa-envelope"></i> moeenthaheem1@gmail.com</p>
         <p><i class="fas fa-phone"></i> +92 3186314829</p>
         <p><i class="fas fa-map-marker"></i> Pakistan</p>
         <div class="social-links">
@@ -992,6 +855,7 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="navbar-loader.js"></script>
   
   <script>
     // Initialize AOS
@@ -1044,7 +908,7 @@
       
       grid.innerHTML = filtered.map(item => `
         <div class="portfolio-item" data-aos="fade-up">
-          <img src="${item.img}.jpeg" alt="${item.title}" class="portfolio-img" onerror="this.src='https://via.placeholder.com/400x300/6a11cb/ffffff?text=${item.title}'">
+          <img src="images/${item.img}.jpeg" alt="${item.title}" class="portfolio-img" onerror="this.src='https://via.placeholder.com/400x300/6a11cb/ffffff?text=${item.title}'">
           <div class="portfolio-overlay">
             <h3>${item.title}</h3>
             <p>${item.desc}</p>
@@ -1111,25 +975,6 @@
     });
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Active Nav on Scroll
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section');
-      let scrollPos = window.scrollY;
-      sections.forEach(section => {
-        const top = section.offsetTop - 100;
-        const bottom = top + section.offsetHeight;
-        const id = section.getAttribute('id');
-        if (scrollPos >= top && scrollPos < bottom) {
-          document.querySelectorAll('.nav-links a').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
     });
 
     // Counter Animation
