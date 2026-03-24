@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <!-- 
   ============================================
-  NAVBAR.HTML - Professional Navbar for Portfolio
-  ============================================
-  This file contains complete navbar with:
-  - Logo + Name
-  - Navigation Links (Home, Skills, Services, Work, Contact, Gallery, Old Site)
-  - Search Bar
-  - Responsive Mobile Menu
-  - Active Page Highlight
-  - Smooth Animations
+  NAVBAR.HTML - Premium Responsive Navbar (Fixed Mobile Menu)
   ============================================
 -->
 
-<nav class="pro-navbar">
+<nav class="pro-navbar" id="proNavbar">
   <!-- Logo Section -->
   <a href="index.html" class="navbar-logo">
     <div class="logo-wrapper">
@@ -70,7 +62,7 @@
 
 <style>
   /* ============================================
-     PRO NAVBAR STYLES - Complete Professional Design
+     PREMIUM NAVBAR STYLES - FULLY RESPONSIVE
      ============================================ */
   
   * {
@@ -81,31 +73,27 @@
 
   .pro-navbar {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1400px;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    border-radius: 80px;
-    padding: 8px 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     z-index: 10000;
+    padding: 12px 5%;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(106, 17, 203, 0.15);
-    transition: all 0.3s ease;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
-  /* Navbar Scroll Effect */
+  /* Scroll Effect */
   .pro-navbar.scrolled {
-    top: 10px;
+    padding: 8px 5%;
     background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    border-color: rgba(106, 17, 203, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   }
 
   /* ========== LOGO STYLES ========== */
@@ -181,6 +169,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
   }
 
   .nav-link {
@@ -195,33 +184,11 @@
     border-radius: 50px;
     transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     position: relative;
-    overflow: hidden;
   }
 
   .nav-link i {
     font-size: 1rem;
     transition: transform 0.3s ease;
-  }
-
-  .nav-link span {
-    position: relative;
-  }
-
-  /* Link Hover Effect */
-  .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    transition: width 0.3s ease;
-  }
-
-  .nav-link:hover::before {
-    width: 70%;
   }
 
   .nav-link:hover {
@@ -240,15 +207,7 @@
     box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
   }
 
-  .nav-link.active::before {
-    display: none;
-  }
-
-  .nav-link.active i {
-    transform: none;
-  }
-
-  /* Old Site Button Special Style */
+  /* Old Site Button */
   .nav-oldsite {
     background: linear-gradient(135deg, rgba(106, 17, 203, 0.12), rgba(37, 117, 252, 0.12));
     border: 1px solid rgba(106, 17, 203, 0.3);
@@ -263,31 +222,29 @@
   /* ========== SEARCH BAR ========== */
   .navbar-search {
     position: relative;
-    display: flex;
-    align-items: center;
+    min-width: 260px;
   }
 
   .search-input {
-    background: rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
     border-radius: 50px;
-    padding: 10px 20px 10px 45px;
-    font-size: 0.9rem;
-    width: 220px;
+    padding: 12px 20px 12px 45px;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     font-family: inherit;
   }
 
   .search-input:focus {
     outline: none;
-    width: 280px;
     border-color: #6a11cb;
     background: white;
     box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
   }
 
   .search-input::placeholder {
-    color: rgba(0, 0, 0, 0.4);
+    color: #adb5bd;
   }
 
   .search-icon {
@@ -295,20 +252,19 @@
     left: 18px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 0.9rem;
+    color: #adb5bd;
+    font-size: 1rem;
     pointer-events: none;
   }
 
   .search-clear {
     position: absolute;
-    right: 15px;
+    right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(0, 0, 0, 0.4);
+    color: #adb5bd;
     cursor: pointer;
     display: none;
-    font-size: 0.8rem;
     transition: color 0.3s ease;
   }
 
@@ -321,8 +277,8 @@
     display: none;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     border: none;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     color: white;
     font-size: 1.2rem;
@@ -337,137 +293,253 @@
     box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
   }
 
-  /* ========== RESPONSIVE DESIGN ========== */
-  @media (max-width: 1100px) {
+  /* ========== RESPONSIVE DESIGN - FIXED MOBILE MENU ========== */
+  @media (max-width: 1024px) {
     .navbar-links {
       gap: 4px;
     }
     .nav-link {
-      padding: 8px 12px;
+      padding: 8px 14px;
       font-size: 0.85rem;
     }
-    .search-input {
-      width: 180px;
-    }
-    .search-input:focus {
-      width: 220px;
+    .navbar-search {
+      min-width: 220px;
     }
   }
 
-  @media (max-width: 968px) {
+  @media (max-width: 900px) {
     .pro-navbar {
-      flex-wrap: wrap;
-      padding: 12px 20px;
-      border-radius: 30px;
-      top: 10px;
-      width: 95%;
+      padding: 12px 4%;
     }
-
+    
+    /* Mobile Menu Button - Show */
     .mobile-menu-btn {
       display: flex;
+      order: 3;
     }
-
+    
+    /* Navigation Links - Hide by default */
     .navbar-links {
       display: none;
       width: 100%;
       flex-direction: column;
       align-items: stretch;
-      gap: 8px;
-      padding: 15px 0 5px;
-      order: 3;
+      gap: 10px;
+      padding: 20px 0 10px;
+      order: 4;
+      background: transparent;
     }
-
+    
+    /* When menu is open - Show */
     .navbar-links.show {
       display: flex;
+      animation: slideDown 0.3s ease;
     }
-
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Mobile Menu Links Style */
     .nav-link {
       justify-content: center;
-      padding: 12px 20px;
+      padding: 14px 20px;
+      font-size: 1rem;
+      width: 100%;
     }
-
+    
+    .nav-link i {
+      font-size: 1.1rem;
+    }
+    
+    /* Search Bar */
     .navbar-search {
       order: 2;
       flex: 1;
-      max-width: 250px;
+      min-width: auto;
     }
-
-    .search-input {
-      width: 100%;
-    }
-
-    .search-input:focus {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 580px) {
-    .pro-navbar {
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
+    
+    /* Logo */
     .navbar-logo {
       order: 1;
     }
-
-    .navbar-search {
-      order: 2;
-      max-width: 200px;
+    
+    .search-input {
+      padding: 10px 20px 10px 42px;
     }
+  }
 
-    .mobile-menu-btn {
-      order: 3;
+  @media (max-width: 600px) {
+    .pro-navbar {
+      padding: 10px 4%;
     }
-
-    .navbar-links {
-      order: 4;
-    }
-
-    .logo-text {
-      font-size: 1.1rem;
-    }
-
+    
     .logo-img {
       width: 38px;
       height: 38px;
     }
-  }
-
-  @media (max-width: 480px) {
+    
+    .logo-text {
+      font-size: 1.1rem;
+    }
+    
     .navbar-search {
-      max-width: 150px;
+      max-width: 180px;
     }
     
     .search-input {
       padding: 8px 15px 8px 38px;
+      font-size: 0.85rem;
+    }
+    
+    .search-icon {
+      left: 14px;
+      font-size: 0.85rem;
+    }
+    
+    .mobile-menu-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+    
+    .nav-link {
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .navbar-search {
+      max-width: 140px;
+    }
+    
+    .search-input {
+      padding: 7px 12px 7px 35px;
       font-size: 0.8rem;
     }
     
     .search-icon {
       left: 12px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+    }
+    
+    .logo-text {
+      font-size: 0.95rem;
+    }
+    
+    .logo-img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  /* Body padding for fixed navbar */
+  body {
+    padding-top: 80px !important;
+  }
+  
+  @media (max-width: 900px) {
+    body {
+      padding-top: 85px !important;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      padding-top: 80px !important;
     }
   }
 </style>
 
 <script>
   // ============================================
-  // NAVBAR JAVASCRIPT - Complete Functionality
+  // NAVBAR JAVASCRIPT - FIXED MOBILE MENU
   // ============================================
 
   (function() {
-    // ========== 1. ACTIVE PAGE HIGHLIGHT ==========
+    // DOM Elements
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const navbar = document.getElementById('proNavbar');
+    
+    // ========== 1. MOBILE MENU TOGGLE (FIXED) ==========
+    function setupMobileMenu() {
+      if (!mobileBtn || !navbarLinks) return;
+      
+      // Toggle menu on button click
+      mobileBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navbarLinks.classList.toggle('show');
+        
+        // Change icon
+        const icon = this.querySelector('i');
+        if (navbarLinks.classList.contains('show')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+      
+      // Close menu when clicking a link
+      const allLinks = navbarLinks.querySelectorAll('.nav-link');
+      allLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navbarLinks.classList.remove('show');
+          if (mobileBtn) {
+            const icon = mobileBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      });
+      
+      // Close menu when clicking outside (optional)
+      document.addEventListener('click', function(event) {
+        if (navbarLinks.classList.contains('show')) {
+          // Check if click is outside navbar
+          const isClickInside = navbar?.contains(event.target);
+          if (!isClickInside) {
+            navbarLinks.classList.remove('show');
+            if (mobileBtn) {
+              const icon = mobileBtn.querySelector('i');
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          }
+        }
+      });
+    }
+    
+    // ========== 2. SCROLL EFFECT ==========
+    function handleScrollEffect() {
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+    }
+    
+    // ========== 3. ACTIVE PAGE HIGHLIGHT ==========
     function highlightActivePage() {
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       const currentHash = window.location.hash;
       
-      // Remove active class from all links
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
       });
       
-      // Highlight based on current page and hash
       if (currentPage === 'index.html') {
         if (currentHash === '#skills') {
           document.querySelector('.nav-skills')?.classList.add('active');
@@ -484,58 +556,13 @@
         document.querySelector('.nav-gallery')?.classList.add('active');
       }
     }
-
-    // ========== 2. SCROLL EFFECT ==========
-    function handleScrollEffect() {
-      const navbar = document.querySelector('.pro-navbar');
-      if (navbar) {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      }
-    }
-
-    // ========== 3. MOBILE MENU TOGGLE ==========
-    function setupMobileMenu() {
-      const mobileBtn = document.getElementById('mobileMenuBtn');
-      const navbarLinks = document.getElementById('navbarLinks');
-      
-      if (mobileBtn && navbarLinks) {
-        mobileBtn.addEventListener('click', () => {
-          navbarLinks.classList.toggle('show');
-          
-          // Change icon based on menu state
-          const icon = mobileBtn.querySelector('i');
-          if (navbarLinks.classList.contains('show')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-        
-        // Close menu when clicking a link
-        navbarLinks.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', () => {
-            navbarLinks.classList.remove('show');
-            const icon = mobileBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          });
-        });
-      }
-    }
-
+    
     // ========== 4. SEARCH FUNCTIONALITY ==========
     function setupSearch() {
       const searchInput = document.getElementById('searchInput');
       const searchClear = document.getElementById('searchClear');
       
       if (searchInput) {
-        // Handle search input
         function handleSearch() {
           const searchTerm = searchInput.value.toLowerCase();
           if (searchTerm) {
@@ -544,7 +571,6 @@
             searchClear.style.display = 'none';
           }
           
-          // If on gallery page and filterProjects function exists
           if (window.location.pathname.includes('index2.html') && typeof window.filterProjects === 'function') {
             window.filterProjects(searchTerm);
           }
@@ -552,7 +578,6 @@
         
         searchInput.addEventListener('input', handleSearch);
         
-        // Clear search
         if (searchClear) {
           searchClear.addEventListener('click', () => {
             searchInput.value = '';
@@ -565,7 +590,7 @@
         }
       }
     }
-
+    
     // ========== 5. TOAST NOTIFICATION ==========
     function showToast(message) {
       let toast = document.getElementById('dynamic-toast');
@@ -601,25 +626,36 @@
         toast.style.transform = 'translateX(100px)';
       }, 3000);
     }
-
-    // ========== 6. HASH CHANGE HANDLER ==========
+    
+    // ========== 6. RESIZE HANDLER ==========
+    function handleResize() {
+      if (window.innerWidth > 900 && navbarLinks) {
+        navbarLinks.classList.remove('show');
+        if (mobileBtn) {
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+    }
+    
+    // ========== 7. HASH CHANGE HANDLER ==========
     function handleHashChange() {
       highlightActivePage();
     }
-
-    // ========== 7. INITIALIZE ALL FUNCTIONS ==========
+    
+    // ========== 8. INITIALIZE ALL ==========
     function initNavbar() {
-      highlightActivePage();
-      handleScrollEffect();
       setupMobileMenu();
+      handleScrollEffect();
+      highlightActivePage();
       setupSearch();
       
-      // Add event listeners
       window.addEventListener('scroll', handleScrollEffect);
       window.addEventListener('hashchange', handleHashChange);
+      window.addEventListener('resize', handleResize);
     }
     
-    // Run when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initNavbar);
     } else {
